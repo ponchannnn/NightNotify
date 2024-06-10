@@ -1,0 +1,4 @@
+name: NightNotify
+version: '${project.version}'
+main: com.ponchannn.nightnotify.NightNotify
+api-version: '1.20'
