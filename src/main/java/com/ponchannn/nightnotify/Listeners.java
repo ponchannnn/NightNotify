@@ -24,7 +24,7 @@ public class Listeners implements org.bukkit.event.Listener {
         if (!playerWorld.isNatural()) return;
         long time = playerWorld.getTime();
         if ((time >= 12541 && time <= 23459 && playerWorld.isClearWeather()) || (time >= 12010 && time <= 23991 && !playerWorld.isClearWeather())) {
-            ((Audience) player).sendTitlePart(TitlePart.SUBTITLE, Component.text("夜だよ！早く寝よう！！！", TextColor.color(255f, 192f, 203f)));
+            player.sendTitlePart(TitlePart.SUBTITLE, Component.text("夜だよ！早く寝よう！！！", TextColor.color(255f, 192f, 203f)));
         }
     }
 
