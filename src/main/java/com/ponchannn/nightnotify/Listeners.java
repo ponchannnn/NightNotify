@@ -3,12 +3,14 @@ package com.ponchannn.nightnotify;
 import io.papermc.paper.event.player.AsyncChatEvent;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
-import net.kyori.adventure.title.TitlePart;
+import net.kyori.adventure.title.Title;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerJoinEvent;
+
+import java.time.Duration;
 
 import static org.bukkit.Sound.ENTITY_EGG_THROW;
 import static org.bukkit.Sound.ITEM_GOAT_HORN_SOUND_0;
@@ -25,7 +27,7 @@ public class Listeners implements org.bukkit.event.Listener {
         if (!playerWorld.isNatural()) return;
         long time = playerWorld.getTime();
         if ((time >= 12541 && time <= 23459 && playerWorld.isClearWeather()) || (time >= 12010 && time <= 23991 && !playerWorld.isClearWeather())) {
-            player.sendTitlePart(TitlePart.SUBTITLE, Component.text("夜だよ！早く寝よう！！！", TextColor.color(255f, 192f, 203f)));
+            player.showTitle(Title.title(Component.empty(), Component.text("夜だよ！早く寝よう！！！", TextColor.color(255, 192, 203)), Title.Times.times(Duration.ZERO, Duration.ofSeconds(2), Duration.ofSeconds(1))));
         }
     }
 
